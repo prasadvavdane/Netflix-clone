@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { FiMenu, FiX,FiUser } from "react-icons/fi";
+import { FiMenu, FiX, FiUser } from "react-icons/fi";
 import Link from "next/link";
+import logo from "../data/Images/logo.jpg";
 
 interface NavbarItem {
   name: string;
@@ -33,23 +34,52 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center">
         {/* Logo, left */}
         <Link href="/">
-          
-            <Image src="/images/logo.jpg" alt="Netflix logo" width={180} height={180} />
-        
+          <Image src={logo} alt="Netflix logo" width={180} height={180} />
         </Link>
+
+        {/* Mobile Menu Button */}
+        <div className="flex items-center ml-auto sm:hidden">
+          {isMobileMenuOpen ? (
+            <div className="flex flex-col items-start w-full">
+              {/* Cross icon for closing mobile menu */}
+              <FiX
+                className="text-white text-2xl cursor-pointer absolute top-4 right-4"
+                onClick={closeMobileMenu}
+              />
+
+              {/* Nav elements for mobile view */}
+              <ul className="flex flex-col w-full mt-4">
+                {navbarItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={`text-white font-semibold hover:text-blue-500 ${
+                        router.pathname === item.href ? "text-blue-500" : ""
+                      } my-2 pl-4`}
+                      onClick={closeMobileMenu}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <FiMenu className="text-white text-2xl cursor-pointer" onClick={toggleMobileMenu} />
+          )}
+        </div>
 
         {/* Nav elements for non-mobile view */}
         <ul className="hidden sm:flex space-x-6 ml-10">
           {navbarItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href}
-                
-                  className={`text-white font-semibold hover:text-blue-500 ${
-                    router.pathname === item.href ? "text-blue-500" : ""
-                  } ml-4`}
-                >
-                  {item.name}
-              
+              <Link
+                href={item.href}
+                className={`text-white font-semibold hover:text-blue-500 ${
+                  router.pathname === item.href ? "text-blue-500" : ""
+                } ml-4`}
+              >
+                {item.name}
               </Link>
             </li>
           ))}
@@ -67,32 +97,6 @@ const Navbar: React.FC = () => {
             <FiUser className="text-white text-3xl" />
             <span className="text-white ml-2 text-md font-bold">Prasad</span>
           </div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="flex items-center ml-auto sm:hidden">
-          {isMobileMenuOpen ? (
-            <div className="flex flex-col items-start w-full">
-              {/* Nav elements for mobile view */}
-              <ul className="flex flex-col w-full mt-4">
-                {navbarItems.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href}
-                        className={`text-white font-semibold hover:text-blue-500 ${
-                          router.pathname === item.href ? "text-blue-500" : ""
-                        } my-2 pl-4`}
-                        onClick={closeMobileMenu}
-                      >
-                        {item.name}
-                    
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <FiMenu className="text-white text-2xl cursor-pointer" onClick={toggleMobileMenu} />
-          )}
         </div>
       </div>
     </nav>

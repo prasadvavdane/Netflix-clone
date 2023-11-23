@@ -33,23 +33,17 @@ const BrowseSection = () => {
 
   return (
     <div>
-       <div className="relative h-[50vh] w-full">
-      {/* Background Image */}
-      <Image
-        src={damsel}
-        alt="Movie Background"
-        layout="fill"
-        objectFit="cover"
-      />
+        <div className="relative h-[50vh] md:h-[70vh] w-full">
+      <Image src={damsel} alt="Movie Background" layout="fill" objectFit="cover" />
 
-      {/* Movie Details */}
-      <div className="absolute bottom-0 left-0 p-8 text-white">
-        <div className="max-w-md"> {/* Limit width for better readability */}
-          <h1 className="text-4xl font-bold mb-2">Rebel Moon </h1>
-          <p className="text-xl mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quae quo maxime dolor sunt repellat necessitatibus dolore at minus explicabo.</p>
-          
-          {/* Play Button (Replace this with your actual play button component or link) */}
-          <Link href="/path/to/your/play-page" className="bg-red-500 px-6 py-3 rounded-full text-white font-bold hover:bg-red-600">Play
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 text-white">
+        <div className="max-w-md mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">Rebel Moon</h1>
+          <p className="text-sm md:text-base lg:text-lg mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quae quo maxime dolor sunt repellat necessitatibus dolore at minus explicabo.
+          </p>
+          <Link href="/path/to/your/play-page" className="bg-red-500 px-4 md:px-6 py-2 md:py-3 rounded-full text-white font-bold hover:bg-red-600">
+            Play
           </Link>
         </div>
       </div>
@@ -72,7 +66,6 @@ const BrowseSection = () => {
                   alt={video.title}
                   layout="responsive"
                   width={350}
-                  height={350}
                   className="hover:border-2 rounded-md"
                 />
               </Link>
