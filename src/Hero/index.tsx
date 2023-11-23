@@ -35,8 +35,7 @@ const BrowseSection = () => {
     <div>
         <div className="relative h-[50vh] md:h-[70vh] w-full">
       <Image src={damsel} alt="Movie Background" layout="fill" objectFit="cover" />
-
-      <div className="absolute bottom-0 left-0 p-4 md:p-8 text-white">
+      <div className="absolute bottom-0 left-0  p-4 md:p-8 text-white">
         <div className="max-w-md mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">Rebel Moon</h1>
           <p className="text-sm md:text-base lg:text-lg mb-4">
