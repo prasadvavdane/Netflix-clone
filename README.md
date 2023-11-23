@@ -1,4 +1,4 @@
-# Netflix Clone
+# Netflix Clone Project Documentation
 
 A Netflix clone project built with Next.js 13, TypeScript, and Tailwind CSS.
 
@@ -13,30 +13,27 @@ This project is a Netflix clone created using Next.js 13, TypeScript, and Tailwi
 - **Tailwind CSS**: A utility-first CSS framework for fast and maintainable styling.
 - **Responsive Design**: Ensures a seamless viewing experience on various devices.
 
-## Getting Started
+## Tools
+- **VS Code Editor.
+- **Version Control: Utilized Git for version control.
+- **Collaboration: Coordinated development using Git branches and merged changes through pull requests.
 
-### Prerequisites
+## Time Sheet
 
-Before you begin, ensure you have the following installed:
+1. Navbar - 2Hrs 
+2. Hero page - 1hr 
+3. Data source- 45 mins
+4. Videos Component- 2 hrs
 
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+## References
+Youtube and Documentation for sliders and responsivness 
+Inbuiled tailwind 
 
-### Installation
+This document serves as an overview of the Netflix Clone project. For detailed code reviews and specific implementation details, please refer to the source code in the /src directory.
 
-1. Clone the repository:
+Project Completion Date: [24-Nov-2023 02:47 AM IST]
 
-   ```bash
-   git clone https://github.com/your-username/netflix-clone.git
-   cd netflix-clone
+** Prasad Vavdane **
+Computer Enginner (2025 Batch)
 
-2. Install dependencies:
-
-```bash 
-npm install 
-
-3. Start the development server
-
-```bash
-npm run dev
 
